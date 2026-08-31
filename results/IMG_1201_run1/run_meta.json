@@ -1,0 +1,13 @@
+{
+  "wall_clock_seconds": 18.524,
+  "frames_processed": 589,
+  "frames_tracked_ok": 519,
+  "n_keyframes": 84,
+  "n_map_points": 5550,
+  "n_tracking_loss_events": 0,
+  "n_relocalization_events": 0,
+  "longest_non_ok_gap_frames": 70,
+  "initialized": true,
+  "pose_convention": "CameraTrajectory.txt stores Twc (camera-to-world); TrackMonocular returns Tcw and is inverted here",
+  "map_point_source": "union of GetTrackedMapPoints() over all frames (stock ORB-SLAM3 exposes no public Atlas accessor)"
+}

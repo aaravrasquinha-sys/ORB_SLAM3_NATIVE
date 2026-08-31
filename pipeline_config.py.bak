@@ -1,0 +1,246 @@
+"""
+pipeline_config.py — shared config loader for the CUT3R pipeline scripts.
+
+Stdlib + PyYAML only (falls back to a config.json of identical structure if
+PyYAML isn't installed). Does NOT import torch, open3d, or matplotlib, so it
+stays safe to import from the GPU-free post-processing scripts.
+
+Precedence (highest wins), implemented by resolve():
+  1. Explicit CLI argument (user typed it — argparse dest is not None)
+  2. config.yaml value (dotted path)
+  3. Hardcoded fallback in the calling script
+
+USAGE (per script):
+    cfg = load_config(args.config)
+    voxel_size = resolve(args.voxel_size, "pointcloud.voxel_size_m", 0.02, cfg,
+                          key="voxel_size_m", validate=positive)
+    ...
+    snapshot(resolved, out_dir)
+"""
+
+import json
+import sys
+import warnings
+from pathlib import Path
+
+try:
+    import yaml
+    _HAVE_YAML = True
+except ImportError:
+    _HAVE_YAML = False
+
+REPO_ROOT = Path(__file__).parent.resolve()
+DEFAULT_CONFIG_NAME = "config.yaml"
+
+# Populated by each script via register_keys() as it resolves its own config
+# values, so the "known keys" registry reflects actual usage rather than a
+# separate hand-maintained list.
+_KNOWN_KEYS = set()
+
+
+def register_keys(*dotted_keys):
+    """Register dotted-path keys as 'known' so load_config()'s unknown-key
+    warning doesn't flag them. Call once per script with every key it reads."""
+    _KNOWN_KEYS.update(dotted_keys)
+
+
+class ConfigError(Exception):
+    """Raised for a nonsensical config value (e.g. negative voxel_size)."""
+
+
+class Config:
+    """Thin wrapper around a nested dict with dotted-path access."""
+
+    def __init__(self, data=None, source=None):
+        self._data = data or {}
+        self.source = source  # Path the config was loaded from, or None
+
+    def get(self, dotted_key, fallback=None):
+        node = self._data
+        for part in dotted_key.split("."):
+            if not isinstance(node, dict) or part not in node:
+                return fallback
+            node = node[part]
+        return fallback if node is None else node
+
+    def flatten_keys(self):
+        """All dotted-path leaf keys actually present in the loaded config."""
+        out = []
+
+        def _walk(node, prefix):
+            if isinstance(node, dict):
+                for k, v in node.items():
+                    path = f"{prefix}.{k}" if prefix else k
+                    _walk(v, path)
+            else:
+                out.append(prefix)
+
+        _walk(self._data, "")
+        return out
+
+
+def load_config(path=None):
+    """Load config.yaml (or config.json fallback) from `path`, or REPO_ROOT by
+    default. A missing file is never fatal — returns an empty Config with one
+    warning. Returns a Config instance."""
+    if path is not None:
+        cfg_path = Path(path)
+    else:
+        cfg_path = REPO_ROOT / DEFAULT_CONFIG_NAME
+
+    if not cfg_path.exists():
+        print(f"[pipeline_config] WARNING: config file not found at {cfg_path} — "
+              f"all values fall back to hardcoded in-code defaults.")
+        return Config({}, source=None)
+
+    text = cfg_path.read_text(encoding="utf-8")
+    if cfg_path.suffix.lower() == ".json" or not _HAVE_YAML:
+        if not _HAVE_YAML and cfg_path.suffix.lower() != ".json":
+            print(f"[pipeline_config] WARNING: PyYAML not installed — attempting to "
+                  f"parse {cfg_path} as JSON instead. Run 'pip install pyyaml' to use "
+                  f"a real config.yaml, or provide a config.json with identical structure.")
+        try:
+            data = json.loads(text)
+        except json.JSONDecodeError as e:
+            print(f"[pipeline_config] WARNING: failed to parse {cfg_path} as JSON "
+                  f"({e}) — falling back to hardcoded in-code defaults.")
+            return Config({}, source=None)
+    else:
+        try:
+            data = yaml.safe_load(text)
+        except yaml.YAMLError as e:
+            print(f"[pipeline_config] WARNING: failed to parse {cfg_path} as YAML "
+                  f"({e}) — falling back to hardcoded in-code defaults.")
+            return Config({}, source=None)
+
+    if data is None:
+        data = {}
+    if not isinstance(data, dict):
+        print(f"[pipeline_config] WARNING: {cfg_path} did not parse to a mapping — "
+              f"falling back to hardcoded in-code defaults.")
+        return Config({}, source=None)
+
+    cfg = Config(data, source=cfg_path)
+    _warn_unknown_keys(cfg)
+    return cfg
+
+
+def _warn_unknown_keys(cfg):
+    if not _KNOWN_KEYS:
+        # No script has registered its keys yet (e.g. config loaded standalone
+        # before any resolve() calls) — nothing meaningful to compare against.
+        return
+    present = set(cfg.flatten_keys())
+    unknown = sorted(present - _KNOWN_KEYS)
+    if unknown:
+        print(f"[pipeline_config] WARNING: {cfg.source} has unrecognized key(s), "
+              f"ignoring (typo, or from a different script/version?): {', '.join(unknown)}")
+
+
+def _coerce(value, code_default, key):
+    """Coerce `value` to the type of `code_default` where sensible."""
+    if code_default is None or value is None:
+        return value
+    target_type = type(code_default)
+    if isinstance(value, target_type):
+        return value
+    try:
+        if target_type is bool:
+            if isinstance(value, str):
+                low = value.strip().lower()
+                if low in ("true", "yes", "1", "on"):
+                    return True
+                if low in ("false", "no", "0", "off"):
+                    return False
+                raise ValueError(value)
+            return bool(value)
+        if target_type is int:
+            return int(value)
+        if target_type is float:
+            return float(value)
+        if target_type is str:
+            return str(value)
+    except (TypeError, ValueError):
+        raise ConfigError(
+            f"config key '{key}': cannot coerce value {value!r} to {target_type.__name__}")
+    return value
+
+
+def resolve(cli_value, config_key, code_default, cfg, key=None, validate=None):
+    """Implements the CLI > config > code-default precedence in one call.
+
+    cli_value:    args.<field> — must be None if the user didn't pass the flag
+                  (achieved by setting argparse default=None for config-backed args)
+    config_key:   dotted path into config.yaml, e.g. "pointcloud.voxel_size_m"
+    code_default: the hardcoded fallback (also defines the expected type)
+    cfg:          a Config instance from load_config()
+    key:          label used in error messages / snapshot (defaults to config_key)
+    validate:     optional callable(value) -> None, raises ConfigError on bad value
+
+    Returns (value, tier) where tier is one of "cli" / "config" / "default".
+    """
+    label = key or config_key
+    if cli_value is not None:
+        value, tier = cli_value, "cli"
+    else:
+        raw = cfg.get(config_key, None)
+        if raw is None:
+            value, tier = code_default, "default"
+        else:
+            value, tier = _coerce(raw, code_default, label), "config"
+
+    if validate is not None:
+        try:
+            validate(value)
+        except ConfigError:
+            raise
+        except Exception as e:
+            raise ConfigError(f"config key '{label}': invalid value {value!r} ({e})")
+
+    return value, tier
+
+
+def snapshot(resolved_dict, out_dir):
+    """Write the fully-resolved parameter set (value + tier per key) to
+    out_dir/resolved_config.yaml (or .json if PyYAML isn't available), so a
+    completed run is self-documenting.
+
+    resolved_dict: {key: (value, tier)}
+    """
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    payload = {k: {"value": v, "source": tier} for k, (v, tier) in resolved_dict.items()}
+
+    if _HAVE_YAML:
+        out_path = out_dir / "resolved_config.yaml"
+        out_path.write_text(yaml.safe_dump(payload, sort_keys=True, default_flow_style=False),
+                             encoding="utf-8")
+    else:
+        out_path = out_dir / "resolved_config.json"
+        out_path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+    print(f"  Resolved config snapshot saved -> {out_path.name}")
+    return out_path
+
+
+# ── Common validators ────────────────────────────────────────────────────────
+def positive(value):
+    if value is None:
+        return
+    if value <= 0:
+        raise ConfigError(f"expected a positive value, got {value}")
+
+
+def non_negative(value):
+    if value is None:
+        return
+    if value < 0:
+        raise ConfigError(f"expected a non-negative value, got {value}")
+
+
+def in_range(lo, hi):
+    def _check(value):
+        if value is None:
+            return
+        if not (lo <= value <= hi):
+            raise ConfigError(f"expected a value in [{lo}, {hi}], got {value}")
+    return _check

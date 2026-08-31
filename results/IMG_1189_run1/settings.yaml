@@ -1,0 +1,50 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------
+# Camera Parameters — Pinhole model, OpenCV distortion
+#--------------------------------------------------------------------
+File.version: "1.0"
+
+Camera.type: "PinHole"
+
+Camera1.fx: 1400.00000000
+Camera1.fy: 1400.00000000
+Camera1.cx: 960.00000000
+Camera1.cy: 540.00000000
+
+Camera1.k1: -0.03000000
+Camera1.k2: 0.01000000
+Camera1.p1: 0.00000000
+Camera1.p2: 0.00000000
+Camera1.k3: 0.00000000
+
+Camera.width: 1920
+Camera.height: 1080
+
+Camera.fps: 30
+
+# Color order: 0=BGR, 1=RGB
+Camera.RGB: 1
+
+#--------------------------------------------------------------------
+# ORB Extractor
+#--------------------------------------------------------------------
+ORBextractor.nFeatures: 1200
+ORBextractor.scaleFactor: 1.20000000
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------
+# Viewer
+#--------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05000000
+Viewer.KeyFrameLineWidth: 1.00000000
+Viewer.GraphLineWidth: 0.90000000
+Viewer.PointSize: 2.00000000
+Viewer.CameraSize: 0.08000000
+Viewer.CameraLineWidth: 3.00000000
+Viewer.ViewpointX: 0.00000000
+Viewer.ViewpointY: -0.70000000
+Viewer.ViewpointZ: -1.80000000
+Viewer.ViewpointF: 500.00000000

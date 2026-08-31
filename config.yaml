@@ -1,0 +1,353 @@
+# ORB-SLAM3 pipeline config.
+#
+# Precedence per value: explicit CLI flag > this file > hardcoded fallback in
+# code. Every key below is optional — delete a key (or the whole file) to
+# fall back to the script's built-in default. Missing keys/file are warned
+# about, never fatal.
+#
+# Comment style mirrors the CUT3R project's config.yaml so both configs can
+# be read side by side:
+#   Each key shows: units | effect | which script reads it.
+#
+# ===== SHARED — read by multiple scripts; must stay consistent =====
+shared:
+  random_seed: 0               # int. RNG seed for: (1) gravity-alignment RANSAC in
+                                # convert_trajectory.py, (2) frame sampling in
+                                # calibrate_camera.py. Fixed seed = reproducible runs.
+                                # Read by: calibrate_camera.py, convert_trajectory.py
+
+  scratch_dir: "~/orb_scratch" # Linux path (WSL2). Frame PNGs and intermediate files
+                                # are written here — NOT to /mnt/c which is slow.
+                                # Read by: extract_frames.py, run_pipeline.py
+
+  orbslam_build_dir: "~/orbslam3_build"   # Linux path. Where build_orbslam3.sh clones
+                                           # and builds Pangolin + ORB-SLAM3.
+                                           # Read by: run_pipeline.py, make_orbslam_settings.py
+
+  videos_dir: null             # Path to the folder containing iPhone video files.
+                                # MUST be set by user (CLI --videos_dir or edit here).
+                                # Read by: run_all.py, run_pipeline.py
+
+# ===== CAMERA RIG =====
+camera:
+  height_m: 0.59               # meters, floor-to-lens (physical measurement from rig).
+                                # Metric output scales LINEARLY with this — measure carefully.
+                                
+                                # Read by: convert_trajectory.py, analyze_run_orb.py
+
+# ===== CAMERA CALIBRATION =====
+calibration:
+  n_frames: 40                 # int. Number of frames to sample from the calibration
+                                # video for checkerboard detection. More = better but slower.
+                                # Read by: calibrate_camera.py
+
+  board_cols: 9                # int. Number of INNER corners along the checkerboard
+                                # long axis (not squares — inner corners = squares - 1).
+                                # Read by: calibrate_camera.py
+
+  board_rows: 6                # int. Number of INNER corners along the checkerboard
+                                # short axis. Read by: calibrate_camera.py
+
+  square_size_mm: 25.0         # float. Physical size of one checkerboard square in
+                                # millimeters. Affects only the scale of extrinsics,
+                                # NOT intrinsics. Read by: calibrate_camera.py
+
+  max_rms_px: 1.0              # float. Maximum acceptable reprojection RMS error in
+                                # pixels. Calibration is REJECTED with a clear error if
+                                # RMS exceeds this. Typical good values: < 0.5 px.
+                                # Read by: calibrate_camera.py
+
+  min_frames: 15               # int. Minimum number of frames where the board was
+                                # successfully detected. Calibration is REJECTED below
+                                # this. Read by: calibrate_camera.py
+
+  output_json: "calibration/iphone14pro_4k_1x.json"   # Path (relative to project root)
+                                                         # where calibration result is
+                                                         # written. Read by:
+                                                         # calibrate_camera.py,
+                                                         # make_orbslam_settings.py
+
+# ===== FRAME EXTRACTION =====
+# NOTE: ORB-SLAM3 needs 30 fps (not 10 fps like CUT3R). Feature tracking between
+# consecutive frames requires small inter-frame baselines. CUT3R's 10 fps works
+# because its recurrent model uses a large context window; ORB-SLAM3's point
+# tracker fails with large inter-frame motion at low fps.
+extraction:
+  target_fps: 30.0             # Hz. Frames per second to extract from video.
+                                # 0 = extract every frame. 30 is strongly recommended.
+                                # CONTRAST with CUT3R's 10 fps — documented in README.
+                                # Read by: extract_frames.py
+
+  resize_longest_side: 960     # px. Resize so the longest side equals this.
+                                # 4K (3840 px) is far larger than ORB-SLAM3 needs and
+                                # slows feature detection. 960 is a good balance.
+                                # Calibration intrinsics are scaled automatically.
+                                # Read by: extract_frames.py, make_orbslam_settings.py
+
+  output_format: "png"         # "png" or "jpg". PNG is lossless; jpg saves space.
+                                # Read by: extract_frames.py
+
+  jpeg_quality: 95             # int [0-100]. JPEG quality if output_format = "jpg".
+                                # Read by: extract_frames.py
+
+# ===== ORB-SLAM3 PARAMETERS =====
+# All names below match the exact keys used in ORB-SLAM3's .yaml settings files.
+# Verified against Examples/Monocular/TUM1.yaml in UZ-SLAMlab/ORB_SLAM3.
+orbslam:
+  n_features: 1200             # int. ORBextractor.nFeatures. ORB keypoints per frame.
+                                # Increase if tracking is lost frequently in texture-rich
+                                # scenes. Lower if tracking is slow on weaker hardware.
+                                # Read by: make_orbslam_settings.py
+
+  scale_factor: 1.2            # float. ORBextractor.scaleFactor. Scale factor between
+                                # pyramid levels. Read by: make_orbslam_settings.py
+
+  n_levels: 8                  # int. ORBextractor.nLevels. Number of pyramid levels.
+                                # Read by: make_orbslam_settings.py
+
+  ini_th_fast: 20              # int. ORBextractor.iniThFAST. Initial FAST threshold.
+                                # Lower if initialization fails in low-texture scenes.
+                                # Read by: make_orbslam_settings.py
+
+  min_th_fast: 7               # int. ORBextractor.minThFAST. Fallback FAST threshold
+                                # used if no corners pass ini_th_fast.
+                                # Read by: make_orbslam_settings.py
+
+  camera_fps: 30.0             # float. Camera.fps in ORB-SLAM3 settings. Must match
+                                # extraction.target_fps for timing to be correct.
+                                # Read by: make_orbslam_settings.py
+
+  rgb_order: 1                 # int. Camera.RGB. 1 = RGB (OpenCV reads BGR but ORB-SLAM3
+                                # can accept either; set to match your pipeline).
+                                # Read by: make_orbslam_settings.py
+
+  use_viewer: false            # bool. Whether to open the Pangolin 3D viewer during a
+                                # run. false = headless (required for batch). Set true
+                                # for a single interactive run (requires WSLg/X11).
+                                # Read by: run_pipeline.py (passed to mono_video)
+
+  # ---- Viewer geometry (Pangolin window; only matters if use_viewer is true) ----
+  keyframe_size: 0.05          # float. Viewer.KeyFrameSize. Read by: make_orbslam_settings.py
+  keyframe_line_width: 1.0     # float. Viewer.KeyFrameLineWidth. Read by: make_orbslam_settings.py
+  graph_line_width: 0.9        # float. Viewer.GraphLineWidth. Read by: make_orbslam_settings.py
+  point_size: 2.0              # float. Viewer.PointSize. Read by: make_orbslam_settings.py
+  camera_size: 0.08            # float. Viewer.CameraSize. Read by: make_orbslam_settings.py
+  camera_line_width: 3.0       # float. Viewer.CameraLineWidth. Read by: make_orbslam_settings.py
+  viewpoint_x: 0.0             # float. Viewer.ViewpointX. Read by: make_orbslam_settings.py
+  viewpoint_y: -0.7            # float. Viewer.ViewpointY. Read by: make_orbslam_settings.py
+  viewpoint_z: -1.8            # float. Viewer.ViewpointZ. Read by: make_orbslam_settings.py
+  viewpoint_f: 500.0           # float. Viewer.ViewpointF. Read by: make_orbslam_settings.py
+
+# ===== GRAVITY ALIGNMENT =====
+gravity:
+  mode: "camera_plane"         # "camera_plane" | "map_points_ransac" | "none".
+                                # camera_plane (default): fit a plane to camera centers
+                                # (SVD), rotate so its normal maps to world up (-Y in
+                                # OpenCV convention). Best for fixed-height rig.
+                                # map_points_ransac: RANSAC a floor plane from map points,
+                                # mirroring CUT3R's approach.
+                                # none: do not apply gravity alignment.
+                                # Read by: convert_trajectory.py
+
+  n_iters: 200                 # int. RANSAC iterations for map_points_ransac mode.
+                                # Read by: convert_trajectory.py
+
+  dist_thresh_frac: 0.01       # float. RANSAC inlier distance threshold as a fraction of
+                                # scene scale (max XYZ range of map points).
+                                # Read by: convert_trajectory.py
+
+  min_inlier_frac: 0.35        # float. Minimum inlier fraction to accept a RANSAC floor
+                                # fit. Read by: convert_trajectory.py
+
+  min_horizontal_dot: 0.7      # float. Minimum |dot(normal, world_up)| to accept a
+                                # fitted plane as roughly horizontal.
+                                # Read by: convert_trajectory.py
+
+# ===== SCALE ANCHORING =====
+# Monocular ORB-SLAM3 produces trajectories in ARBITRARY units. A scale mode
+# MUST be chosen to produce metric output. If the required ground truth is
+# absent the run is flagged non-metric and all metric comparisons are invalid.
+scale:
+  # Moved off camera_height for IMG_1112: the sparse map has no valid floor
+  # plane to measure against (plain floor is texture-poor, ORB extracts
+  # almost no features there) — camera_height's percentile-based floor
+  # estimate locked onto a furniture cluster instead, giving a factor ~1.7x
+  # too large. Using ground_truth_path_length with hand-measured GT instead.
+  mode: "ground_truth_segment"  # "camera_height" | "ground_truth_path_length" |
+                                # "ground_truth_net_displacement" |
+                                # "ground_truth_segment" | "manual_factor".
+                                # camera_height (preferred): after gravity alignment,
+                                # measure camera height above fitted floor plane in map
+                                # units; factor = camera.height_m / measured_height.
+                                # Mirrors CUT3R's auto_scale approach.
+                                # Read by: convert_trajectory.py
+
+  manual_factor: 1.0           # float. Scale factor applied when mode = manual_factor.
+                                # Read by: convert_trajectory.py
+
+  min_trajectory_coverage: 0.95   # float [0-1]. Minimum fraction of the video that must be
+                                   # tracked before a whole-route ground-truth scale mode
+                                   # (ground_truth_path_length / ground_truth_net_displacement)
+                                   # is allowed. Those modes divide a whole-route GT distance
+                                   # by the trajectory's measured length, so untracked frames
+                                   # inflate the factor by ~1/coverage. IMG_1112 ran at 0.858
+                                   # coverage and came out ~16% too large.
+                                   # Not applied to ground_truth_segment (frame-bounded by
+                                   # construction) or to camera_height.
+                                   # Read by: convert_trajectory.py
+
+# ===== GROUND TRUTH (per-video) =====
+# Fill in known measurements for each video. null = unknown (non-metric mode).
+# segment: the distance between two specific frame indices (for partial-route GT).
+groundtruth:
+  IMG_1112:
+    path_length_m: 4.62          # 241cm + 221cm, hand-measured along the walked path
+    net_displacement_m: 4.27     # law of cosines on 2.41m and 2.21m at ~135deg
+    segment:
+      from_frame: 53             # first OK frame; frames 0-52 are NOT_INITIALIZED
+      to_frame: 380               # last frame in tracking_log.csv
+      distance_m: 3.98           # ESTIMATE, not a measurement: 4.62 * (10.90s / 12.70s),
+                                  # assuming constant walking speed. Expect +/-10%.
+    notes: "Hand-measured GT sketch. Two straight legs, ~135deg turn, slightly curved in reality.
+            Tracking initialized 1.77s late, so 14% of the walk has no poses. segment.distance_m
+            is a constant-speed estimate of the tracked portion, NOT a ground measurement.
+            Re-record with lead-in motion to get a properly measured whole-route GT."
+  IMG_1144:
+    path_length_m: null
+    net_displacement_m: null
+    segment: null
+    notes: ""
+  IMG_1189:
+    path_length_m: null
+    net_displacement_m: null
+    segment: null
+    notes: ""
+  IMG_1189_doorway:
+    path_length_m: null
+    net_displacement_m: null
+    segment: null
+    notes: "Doorway transition — CUT3R lost confidence here"
+  IMG_1189_room2:
+    path_length_m: null
+    net_displacement_m: null
+    segment: null
+    notes: ""
+  IMG_1201:
+    path_length_m: null
+    net_displacement_m: null
+    segment: null
+    notes: ""
+  IMG_1205:
+    path_length_m: null
+    net_displacement_m: null
+    segment: null
+    notes: "257 frames; CUT3R confidence collapsed ~110 frames on turns/doorway"
+  IMG_1206:
+    path_length_m: null
+    net_displacement_m: null
+    segment: null
+    notes: "Gentler turns, more upright camera; CUT3R tracked cleanly (107 frames)"
+  my_iphone_video:
+    path_length_m: null
+    net_displacement_m: null
+    segment: null
+    notes: ""
+
+# ===== VIDEOS TO PROCESS (batch mode) =====
+# Ordered list processed by run_all.py. Names must match files in videos_dir.
+# File extensions are tried in order: .mov, .mp4, .MP4, .MOV.
+videos:
+  - IMG_1112
+  - IMG_1144
+  - IMG_1189
+  - IMG_1189_doorway
+  - IMG_1189_room2
+  - IMG_1201
+  - IMG_1205
+  - IMG_1206
+  - my_iphone_video
+
+# ===== POINT CLOUD =====
+pointcloud:
+  voxel_size_m: 0.02           # meters. Voxel size for downsampling map/merged.ply.
+                                # 0 = disabled. Read by: convert_trajectory.py
+
+  outlier_removal_method: "none"   # "none" | "statistical" | "radius".
+                                    # Read by: convert_trajectory.py
+
+  outlier_statistical_nb_neighbors: 20   # int. Neighbors for statistical outlier removal.
+                                          # Read by: convert_trajectory.py
+
+  outlier_statistical_std_ratio: 2.0     # float. Std-dev threshold multiplier.
+                                          # Read by: convert_trajectory.py
+
+  outlier_radius_nb_points: 16   # int. Min neighbors within radius for radius removal.
+                                  # Read by: convert_trajectory.py
+
+  outlier_radius_m: 0.05        # meters. Radius for radius outlier removal.
+                                 # Read by: convert_trajectory.py
+
+# ===== VISUALIZATION =====
+# Mirror CUT3R's visualization keys exactly so visualize_map.py works unchanged.
+visualization:
+  bin_size_m: 0.05              # meters. Bin size for the top-down density heatmap.
+                                 # Read by: visualize_map.py, analyze_run_orb.py
+
+  scatter_point_size: 0.2       # matplotlib scatter marker size for top-down floor plan.
+                                 # Read by: visualize_map.py, analyze_run_orb.py
+
+  scatter_alpha: 0.5            # float [0-1]. Alpha/opacity for top-down scatter plot.
+                                 # Read by: visualize_map.py, analyze_run_orb.py
+
+  height_cmap: viridis          # matplotlib colormap for height-colored scatter.
+                                 # Read by: visualize_map.py, analyze_run_orb.py
+
+  density_cmap: inferno         # matplotlib colormap for density heatmap.
+                                 # Read by: visualize_map.py
+
+  dpi: 150                      # output PNG DPI for floor-plan figures.
+                                 # Read by: visualize_map.py
+
+# ===== DIAGNOSTICS =====
+# Mirror CUT3R's diagnostics keys so plots can be compared side by side.
+diagnostics:
+  heading_min_displacement_m: 0.005  # meters. Minimum smoothed XZ displacement for motion
+                                      # heading to be defined. MUST be smaller than CUT3R's
+                                      # equivalent: this pipeline runs at 30 fps
+                                      # (extraction.target_fps) vs CUT3R's 10 fps, so
+                                      # per-frame displacement is ~3x smaller. At 0.02 this
+                                      # excluded 314/328 frames on IMG_1112 and made the
+                                      # heading diagnostic unusable.
+                                      # Read by: analyze_run_orb.py
+
+  heading_smooth_window: 5           # int (odd preferred). Moving window for smoothing
+                                      # position before computing motion heading.
+                                      # Read by: analyze_run_orb.py
+
+  depth_vis_percentile: 98           # percentile [0-100]. Upper clip used when
+                                      # normalizing depth maps for display (ORB has no
+                                      # dense depth so this is unused, kept for compat).
+                                      # Read by: analyze_run_orb.py
+
+  dpi: 120                           # output PNG DPI for diagnostic plots.
+                                      # Read by: analyze_run_orb.py
+
+  window_disagreement_size: 20       # int. Rolling window size (frames) for the
+                                      # windowed/cumulative heading-vs-yaw disagreement
+                                      # metric in debug_summary.txt. This catches
+                                      # slow-onset divergence that a single-frame max
+                                      # statistic misses (see: CUT3R's ~110-frame
+                                      # gradual confidence collapse in IMG_1205).
+                                      # Read by: analyze_run_orb.py
+
+# ===== COMPARISON =====
+compare:
+  umeyama_scale_free: true      # bool. If true, Umeyama/Procrustes alignment in
+                                 # compare_runs.py solves for scale as well as rigid
+                                 # transform (shape-only comparison). If false,
+                                 # scale-fixed alignment only.
+                                 # Read by: compare_runs.py
+
+  axis_limits_shared: true      # bool. If true, comparison_floorplans.png uses shared
+                                 # axis limits across both pipelines for honest visual
+                                 # comparison. Read by: compare_runs.py

@@ -1,0 +1,18 @@
+camera_height_m:
+  source: config
+  value: 0.73
+dpi:
+  source: config
+  value: 120
+heading_min_displacement_m:
+  source: config
+  value: 0.005
+heading_smooth_window:
+  source: config
+  value: 5
+target_fps:
+  source: config
+  value: 30.0
+window_disagreement_size:
+  source: config
+  value: 20

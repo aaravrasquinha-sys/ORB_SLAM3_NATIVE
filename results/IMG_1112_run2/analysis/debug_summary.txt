@@ -1,0 +1,43 @@
+=================================================================
+  ANALYZE_RUN_ORB - AUTOMATED DEBUG SUMMARY
+=================================================================
+
+-----------------------------------------------------------------
+TRAJECTORY COVERAGE
+-----------------------------------------------------------------
+Frames in tracking_log.csv: 381  (12.70 s @ 30.0 fps)
+  OK: 328
+  NOT_INITIALIZED: 53
+First OK frame: 53   Last OK frame: 380
+Poses in CameraTrajectory.txt (pred_poses.npy): 328
+First pose timestamp: 1.767 s   Last pose timestamp: 12.667 s
+Coverage fraction (tracked duration / total video duration): 85.8%
+  *** COVERAGE FLAG: only 85.8% of the video is covered by the trajectory. Any whole-route ground-truth value anchored onto this trajectory will be inflated by roughly 1/coverage = 1.165x. ***
+
+Longest tracking-loss gap: frames [0, 52] (53 frames)
+Largest single-frame yaw jump: frame 145 -> 146  (-10.53 deg -> -10.87 deg, delta=-0.34 deg)
+Motion-heading: excluded 9/328 frames with smoothed displacement < 0.005 m (heading undefined there).
+Motion-heading vs yaw disagreement (all valid frames): mean |diff| = 21.03 deg, max |diff| = 169.12 deg at frame 326
+Motion-heading vs yaw disagreement (tracking-OK subset): mean |diff| = 21.32 deg, max |diff| = 169.12 deg at frame 326 (267/328 frames)
+
+Windowed heading-vs-yaw degradation (window=20 frames):
+  Rationale: a single largest-jump stat can undersell a failure that is
+  spread across many frames (e.g. a slow drift smeared over ~100+ frames
+  rather than one sharp jump). This reports the worst sustained window's
+  mean |heading - yaw| instead of only the worst single instant.
+  Worst window: frames [308, 327]  mean |diff| = 45.00 deg
+
+Total path length (recomputed from pred_poses.npy): 3.9800 m
+Net displacement  (recomputed from pred_poses.npy): 3.9118 m
+Y span            (recomputed from pred_poses.npy): 0.0346 m
+Keyframe count (from per-frame log): 51
+Keyframe count (from orb_run_log.json n_keyframes): 61
+Scale mode: ground_truth_segment   factor: 2.610139138188236   is_metric: True
+  *** METRIC RESULT IS ESTIMATE-DERIVED, NOT A GROUND MEASUREMENT ***
+  (scale.mode=ground_truth_segment: the groundtruth distance_m for this segment was itself an estimate — see groundtruth.<video>.notes in config.yaml. Treat distances as approximate, not measured.)
+Gravity alignment: mode=camera_plane  residual_m=0.0034802554005226175
+map/merged.ply present (line count incl. header: 2519)
+
+Note: ORB-SLAM3 has no dense per-pixel depth/confidence output (no pred_pts3d.npy/pred_conf.npy analogue). Downstream tools degrade gracefully when those files are absent, matching how CUT3R's own analyze_run.py already handles missing optional inputs.
+
+=================================================================

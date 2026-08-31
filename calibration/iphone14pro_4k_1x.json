@@ -1,0 +1,17 @@
+{
+  "fx": 1400.0,
+  "fy": 1400.0,
+  "cx": 960.0,
+  "cy": 540.0,
+  "k1": -0.03,
+  "k2": 0.01,
+  "p1": 0.0,
+  "p2": 0.0,
+  "k3": 0.0,
+  "width": 1920,
+  "height": 1080,
+  "rms_reprojection_error_px": null,
+  "n_frames_used": 0,
+  "source": "estimated_from_iphone13pro_arkit_intrinsics_scaled_to_1080p",
+  "notes": "APPROXIMATE - not from calibration video. IMG_1112 is 1920x1080."
+}

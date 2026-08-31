@@ -1,0 +1,51 @@
+camera_height_m:
+  source: cli
+  value: 0.01
+dist_thresh_frac:
+  source: config
+  value: 0.01
+gravity_mode:
+  source: config
+  value: camera_plane
+manual_factor:
+  source: config
+  value: 1.0
+min_horizontal_dot:
+  source: config
+  value: 0.7
+min_inlier_frac:
+  source: config
+  value: 0.35
+min_trajectory_coverage:
+  source: config
+  value: 0.95
+n_iters:
+  source: config
+  value: 200
+outlier_method:
+  source: config
+  value: none
+outlier_rad_m:
+  source: config
+  value: 0.05
+outlier_rad_n:
+  source: config
+  value: 16
+outlier_stat_k:
+  source: config
+  value: 20
+outlier_stat_std:
+  source: config
+  value: 2.0
+random_seed:
+  source: config
+  value: 0
+scale_mode:
+  source: config
+  value: ground_truth_segment
+target_fps:
+  source: config
+  value: 30.0
+voxel_size_m:
+  source: config
+  value: 0.02

@@ -1,0 +1,3485 @@
+{
+  "gravity": {
+    "mode": "camera_plane",
+    "found": true,
+    "plane_normal": [
+      0.0472293787181072,
+      -0.9729944095387568,
+      -0.22594526946193788
+    ],
+    "plane_centroid": [
+      -0.37502228680182925,
+      -0.19306409315243908,
+      0.7230461465060974
+    ],
+    "residual_m": 0.0034802554005226175,
+    "R_align": [
+      [
+        0.9988694269972219,
+        0.0472293787181072,
+        0.0054086593703410665
+      ],
+      [
+        -0.0472293787181072,
+        0.9729944095392636,
+        0.22594526946193788
+      ],
+      [
+        0.0054086593703410665,
+        -0.22594526946193788,
+        0.9741249825420417
+      ]
+    ]
+  },
+  "scale": {
+    "mode": "ground_truth_segment",
+    "is_metric": true,
+    "factor": 2.610139138188236,
+    "segment": {
+      "from_frame": 53,
+      "to_frame": 380,
+      "distance_m": 3.98
+    },
+    "measured_segment_path_length": 1.5248229267818338,
+    "n_poses_in_segment": 328,
+    "is_estimate": true
+  },
+  "coverage": null,
+  "y_floor_scaled": 0.2582852697247619,
+  "camera_height_m": 0.73,
+  "n_frames": 328,
+  "n_keyframes": 61,
+  "per_frame": [
+    {
+      "frame": 0,
+      "timestamp": 0.0,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5765,
+      "n_map_matches": 0,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.265002965927124
+    },
+    {
+      "frame": 1,
+      "timestamp": 0.033333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5759,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2649289667606354
+    },
+    {
+      "frame": 2,
+      "timestamp": 0.066666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5781,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2657458484172821
+    },
+    {
+      "frame": 3,
+      "timestamp": 0.1,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5756,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26583799719810486
+    },
+    {
+      "frame": 4,
+      "timestamp": 0.133333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5789,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2665024399757385
+    },
+    {
+      "frame": 5,
+      "timestamp": 0.166666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5789,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2660207152366638
+    },
+    {
+      "frame": 6,
+      "timestamp": 0.2,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5776,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26628902554512024
+    },
+    {
+      "frame": 7,
+      "timestamp": 0.233333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5773,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26627910137176514
+    },
+    {
+      "frame": 8,
+      "timestamp": 0.266666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5782,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2660776376724243
+    },
+    {
+      "frame": 9,
+      "timestamp": 0.3,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5762,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26796627044677734
+    },
+    {
+      "frame": 10,
+      "timestamp": 0.333333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5755,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2671966254711151
+    },
+    {
+      "frame": 11,
+      "timestamp": 0.366666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5780,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26761487126350403
+    },
+    {
+      "frame": 12,
+      "timestamp": 0.4,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5775,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2679833173751831
+    },
+    {
+      "frame": 13,
+      "timestamp": 0.433333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5777,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2685783803462982
+    },
+    {
+      "frame": 14,
+      "timestamp": 0.466666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5751,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26876527070999146
+    },
+    {
+      "frame": 15,
+      "timestamp": 0.5,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5765,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2688102126121521
+    },
+    {
+      "frame": 16,
+      "timestamp": 0.533333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5767,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2693731188774109
+    },
+    {
+      "frame": 17,
+      "timestamp": 0.566666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5771,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27034851908683777
+    },
+    {
+      "frame": 18,
+      "timestamp": 0.6,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5761,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2702864408493042
+    },
+    {
+      "frame": 19,
+      "timestamp": 0.633333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5765,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2705231010913849
+    },
+    {
+      "frame": 20,
+      "timestamp": 0.666666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5779,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2700030505657196
+    },
+    {
+      "frame": 21,
+      "timestamp": 0.7,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5794,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2708042860031128
+    },
+    {
+      "frame": 22,
+      "timestamp": 0.733333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5783,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.270408570766449
+    },
+    {
+      "frame": 23,
+      "timestamp": 0.766666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5796,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27125343680381775
+    },
+    {
+      "frame": 24,
+      "timestamp": 0.8,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5792,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2713024616241455
+    },
+    {
+      "frame": 25,
+      "timestamp": 0.833333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5789,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27058595418930054
+    },
+    {
+      "frame": 26,
+      "timestamp": 0.866666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5777,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2711842656135559
+    },
+    {
+      "frame": 27,
+      "timestamp": 0.9,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5780,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2711523473262787
+    },
+    {
+      "frame": 28,
+      "timestamp": 0.933333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5786,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2712257504463196
+    },
+    {
+      "frame": 29,
+      "timestamp": 0.966666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5773,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2714347541332245
+    },
+    {
+      "frame": 30,
+      "timestamp": 1.0,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5776,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2717340290546417
+    },
+    {
+      "frame": 31,
+      "timestamp": 1.033333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5802,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27169784903526306
+    },
+    {
+      "frame": 32,
+      "timestamp": 1.066666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5786,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2718144953250885
+    },
+    {
+      "frame": 33,
+      "timestamp": 1.1,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5792,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27191826701164246
+    },
+    {
+      "frame": 34,
+      "timestamp": 1.133333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5779,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27265000343322754
+    },
+    {
+      "frame": 35,
+      "timestamp": 1.166666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5795,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2731614410877228
+    },
+    {
+      "frame": 36,
+      "timestamp": 1.2,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5785,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2732681930065155
+    },
+    {
+      "frame": 37,
+      "timestamp": 1.233333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5761,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27326130867004395
+    },
+    {
+      "frame": 38,
+      "timestamp": 1.266666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5746,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2735222280025482
+    },
+    {
+      "frame": 39,
+      "timestamp": 1.3,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5751,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27438828349113464
+    },
+    {
+      "frame": 40,
+      "timestamp": 1.333333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5761,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.273642361164093
+    },
+    {
+      "frame": 41,
+      "timestamp": 1.366666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5721,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2738706171512604
+    },
+    {
+      "frame": 42,
+      "timestamp": 1.4,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5750,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27429187297821045
+    },
+    {
+      "frame": 43,
+      "timestamp": 1.433333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5735,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27430394291877747
+    },
+    {
+      "frame": 44,
+      "timestamp": 1.466666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5727,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27455753087997437
+    },
+    {
+      "frame": 45,
+      "timestamp": 1.5,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5724,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2755570709705353
+    },
+    {
+      "frame": 46,
+      "timestamp": 1.533333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5710,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27567681670188904
+    },
+    {
+      "frame": 47,
+      "timestamp": 1.566666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5727,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27532345056533813
+    },
+    {
+      "frame": 48,
+      "timestamp": 1.6,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5733,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2757944166660309
+    },
+    {
+      "frame": 49,
+      "timestamp": 1.633333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5759,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2757551074028015
+    },
+    {
+      "frame": 50,
+      "timestamp": 1.666666667,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5706,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27662310004234314
+    },
+    {
+      "frame": 51,
+      "timestamp": 1.7,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5743,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27641093730926514
+    },
+    {
+      "frame": 52,
+      "timestamp": 1.733333333,
+      "tracking_state": "NOT_INITIALIZED",
+      "n_keypoints": 5736,
+      "n_map_matches": 0,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27659809589385986
+    },
+    {
+      "frame": 53,
+      "timestamp": 1.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 5705,
+      "n_map_matches": 176,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.27678418159484863
+    },
+    {
+      "frame": 54,
+      "timestamp": 1.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 100,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2771492600440979
+    },
+    {
+      "frame": 55,
+      "timestamp": 1.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1210,
+      "n_map_matches": 105,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.27680251002311707
+    },
+    {
+      "frame": 56,
+      "timestamp": 1.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 122,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27759307622909546
+    },
+    {
+      "frame": 57,
+      "timestamp": 1.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 113,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2776573896408081
+    },
+    {
+      "frame": 58,
+      "timestamp": 1.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 131,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27792978286743164
+    },
+    {
+      "frame": 59,
+      "timestamp": 1.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 139,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.27821964025497437
+    },
+    {
+      "frame": 60,
+      "timestamp": 2.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 149,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2786334753036499
+    },
+    {
+      "frame": 61,
+      "timestamp": 2.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 155,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27895882725715637
+    },
+    {
+      "frame": 62,
+      "timestamp": 2.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 172,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2783336043357849
+    },
+    {
+      "frame": 63,
+      "timestamp": 2.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 170,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.27880677580833435
+    },
+    {
+      "frame": 64,
+      "timestamp": 2.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 177,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27863627672195435
+    },
+    {
+      "frame": 65,
+      "timestamp": 2.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 163,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27924302220344543
+    },
+    {
+      "frame": 66,
+      "timestamp": 2.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 180,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2789938449859619
+    },
+    {
+      "frame": 67,
+      "timestamp": 2.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 169,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.27972036600112915
+    },
+    {
+      "frame": 68,
+      "timestamp": 2.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 182,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2799060344696045
+    },
+    {
+      "frame": 69,
+      "timestamp": 2.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 194,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2799506187438965
+    },
+    {
+      "frame": 70,
+      "timestamp": 2.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 185,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2797490656375885
+    },
+    {
+      "frame": 71,
+      "timestamp": 2.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 204,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28026682138442993
+    },
+    {
+      "frame": 72,
+      "timestamp": 2.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 201,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2800293564796448
+    },
+    {
+      "frame": 73,
+      "timestamp": 2.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 212,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28041350841522217
+    },
+    {
+      "frame": 74,
+      "timestamp": 2.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 207,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2805626094341278
+    },
+    {
+      "frame": 75,
+      "timestamp": 2.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 221,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2807881236076355
+    },
+    {
+      "frame": 76,
+      "timestamp": 2.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 202,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.280618280172348
+    },
+    {
+      "frame": 77,
+      "timestamp": 2.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 215,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2807822823524475
+    },
+    {
+      "frame": 78,
+      "timestamp": 2.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1210,
+      "n_map_matches": 228,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2815852165222168
+    },
+    {
+      "frame": 79,
+      "timestamp": 2.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 227,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2813146114349365
+    },
+    {
+      "frame": 80,
+      "timestamp": 2.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 230,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2815232574939728
+    },
+    {
+      "frame": 81,
+      "timestamp": 2.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 245,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28164994716644287
+    },
+    {
+      "frame": 82,
+      "timestamp": 2.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 235,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2813820242881775
+    },
+    {
+      "frame": 83,
+      "timestamp": 2.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 248,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28164350986480713
+    },
+    {
+      "frame": 84,
+      "timestamp": 2.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 233,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28190702199935913
+    },
+    {
+      "frame": 85,
+      "timestamp": 2.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 257,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2820455729961395
+    },
+    {
+      "frame": 86,
+      "timestamp": 2.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 263,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2826544940471649
+    },
+    {
+      "frame": 87,
+      "timestamp": 2.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 249,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2833969295024872
+    },
+    {
+      "frame": 88,
+      "timestamp": 2.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 263,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2836347818374634
+    },
+    {
+      "frame": 89,
+      "timestamp": 2.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 259,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2837800681591034
+    },
+    {
+      "frame": 90,
+      "timestamp": 3.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 265,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28468436002731323
+    },
+    {
+      "frame": 91,
+      "timestamp": 3.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 257,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2842884361743927
+    },
+    {
+      "frame": 92,
+      "timestamp": 3.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 275,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28405770659446716
+    },
+    {
+      "frame": 93,
+      "timestamp": 3.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 268,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2853162884712219
+    },
+    {
+      "frame": 94,
+      "timestamp": 3.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 269,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2846631109714508
+    },
+    {
+      "frame": 95,
+      "timestamp": 3.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 270,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28529468178749084
+    },
+    {
+      "frame": 96,
+      "timestamp": 3.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 278,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28577959537506104
+    },
+    {
+      "frame": 97,
+      "timestamp": 3.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1210,
+      "n_map_matches": 274,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28561756014823914
+    },
+    {
+      "frame": 98,
+      "timestamp": 3.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 287,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2859674394130707
+    },
+    {
+      "frame": 99,
+      "timestamp": 3.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 281,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28637757897377014
+    },
+    {
+      "frame": 100,
+      "timestamp": 3.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 295,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2862151861190796
+    },
+    {
+      "frame": 101,
+      "timestamp": 3.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 274,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2860788106918335
+    },
+    {
+      "frame": 102,
+      "timestamp": 3.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 277,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28619420528411865
+    },
+    {
+      "frame": 103,
+      "timestamp": 3.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 302,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28580233454704285
+    },
+    {
+      "frame": 104,
+      "timestamp": 3.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 280,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.285817950963974
+    },
+    {
+      "frame": 105,
+      "timestamp": 3.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 294,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2859363555908203
+    },
+    {
+      "frame": 106,
+      "timestamp": 3.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 277,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28642427921295166
+    },
+    {
+      "frame": 107,
+      "timestamp": 3.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1213,
+      "n_map_matches": 297,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28568437695503235
+    },
+    {
+      "frame": 108,
+      "timestamp": 3.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 278,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28533944487571716
+    },
+    {
+      "frame": 109,
+      "timestamp": 3.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 304,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2853878140449524
+    },
+    {
+      "frame": 110,
+      "timestamp": 3.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 311,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28595754504203796
+    },
+    {
+      "frame": 111,
+      "timestamp": 3.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 291,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.286483496427536
+    },
+    {
+      "frame": 112,
+      "timestamp": 3.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 323,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2867658734321594
+    },
+    {
+      "frame": 113,
+      "timestamp": 3.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 301,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2872673571109772
+    },
+    {
+      "frame": 114,
+      "timestamp": 3.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 303,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28502073884010315
+    },
+    {
+      "frame": 115,
+      "timestamp": 3.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 323,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28454798460006714
+    },
+    {
+      "frame": 116,
+      "timestamp": 3.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 298,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28520721197128296
+    },
+    {
+      "frame": 117,
+      "timestamp": 3.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 280,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28496530652046204
+    },
+    {
+      "frame": 118,
+      "timestamp": 3.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 304,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2853763699531555
+    },
+    {
+      "frame": 119,
+      "timestamp": 3.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 297,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28607314825057983
+    },
+    {
+      "frame": 120,
+      "timestamp": 4.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 283,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28540876507759094
+    },
+    {
+      "frame": 121,
+      "timestamp": 4.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 316,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28583526611328125
+    },
+    {
+      "frame": 122,
+      "timestamp": 4.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 325,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28671735525131226
+    },
+    {
+      "frame": 123,
+      "timestamp": 4.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 309,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28656038641929626
+    },
+    {
+      "frame": 124,
+      "timestamp": 4.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 299,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28706151247024536
+    },
+    {
+      "frame": 125,
+      "timestamp": 4.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 316,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28650450706481934
+    },
+    {
+      "frame": 126,
+      "timestamp": 4.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 324,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2857517600059509
+    },
+    {
+      "frame": 127,
+      "timestamp": 4.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 291,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2882012128829956
+    },
+    {
+      "frame": 128,
+      "timestamp": 4.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 316,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28879377245903015
+    },
+    {
+      "frame": 129,
+      "timestamp": 4.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 317,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28870517015457153
+    },
+    {
+      "frame": 130,
+      "timestamp": 4.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 318,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28869739174842834
+    },
+    {
+      "frame": 131,
+      "timestamp": 4.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 288,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2893539071083069
+    },
+    {
+      "frame": 132,
+      "timestamp": 4.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 322,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.29074719548225403
+    },
+    {
+      "frame": 133,
+      "timestamp": 4.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 312,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2913918197154999
+    },
+    {
+      "frame": 134,
+      "timestamp": 4.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 293,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2895357608795166
+    },
+    {
+      "frame": 135,
+      "timestamp": 4.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 320,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2901400923728943
+    },
+    {
+      "frame": 136,
+      "timestamp": 4.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 296,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28988584876060486
+    },
+    {
+      "frame": 137,
+      "timestamp": 4.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 278,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2883191406726837
+    },
+    {
+      "frame": 138,
+      "timestamp": 4.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 290,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28899437189102173
+    },
+    {
+      "frame": 139,
+      "timestamp": 4.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 291,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28957802057266235
+    },
+    {
+      "frame": 140,
+      "timestamp": 4.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 291,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28948497772216797
+    },
+    {
+      "frame": 141,
+      "timestamp": 4.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 331,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28967514634132385
+    },
+    {
+      "frame": 142,
+      "timestamp": 4.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 322,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2891715168952942
+    },
+    {
+      "frame": 143,
+      "timestamp": 4.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 299,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2871565520763397
+    },
+    {
+      "frame": 144,
+      "timestamp": 4.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 317,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28627631068229675
+    },
+    {
+      "frame": 145,
+      "timestamp": 4.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 301,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2864391505718231
+    },
+    {
+      "frame": 146,
+      "timestamp": 4.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 286,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2865588665008545
+    },
+    {
+      "frame": 147,
+      "timestamp": 4.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 307,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2869029939174652
+    },
+    {
+      "frame": 148,
+      "timestamp": 4.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 316,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2872699201107025
+    },
+    {
+      "frame": 149,
+      "timestamp": 4.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 319,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2862624228000641
+    },
+    {
+      "frame": 150,
+      "timestamp": 5.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 322,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28603100776672363
+    },
+    {
+      "frame": 151,
+      "timestamp": 5.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 301,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2821640372276306
+    },
+    {
+      "frame": 152,
+      "timestamp": 5.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1210,
+      "n_map_matches": 299,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28131136298179626
+    },
+    {
+      "frame": 153,
+      "timestamp": 5.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 268,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28184953331947327
+    },
+    {
+      "frame": 154,
+      "timestamp": 5.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 310,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28120431303977966
+    },
+    {
+      "frame": 155,
+      "timestamp": 5.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 297,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27938592433929443
+    },
+    {
+      "frame": 156,
+      "timestamp": 5.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 286,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2781338393688202
+    },
+    {
+      "frame": 157,
+      "timestamp": 5.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 326,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.277876079082489
+    },
+    {
+      "frame": 158,
+      "timestamp": 5.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 323,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27749747037887573
+    },
+    {
+      "frame": 159,
+      "timestamp": 5.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 317,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27611595392227173
+    },
+    {
+      "frame": 160,
+      "timestamp": 5.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 293,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.275971382856369
+    },
+    {
+      "frame": 161,
+      "timestamp": 5.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 356,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2746413052082062
+    },
+    {
+      "frame": 162,
+      "timestamp": 5.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 310,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27407705783843994
+    },
+    {
+      "frame": 163,
+      "timestamp": 5.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 267,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2735550105571747
+    },
+    {
+      "frame": 164,
+      "timestamp": 5.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 261,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2741309404373169
+    },
+    {
+      "frame": 165,
+      "timestamp": 5.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1210,
+      "n_map_matches": 323,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2718617618083954
+    },
+    {
+      "frame": 166,
+      "timestamp": 5.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 282,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2698593735694885
+    },
+    {
+      "frame": 167,
+      "timestamp": 5.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 257,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2703840732574463
+    },
+    {
+      "frame": 168,
+      "timestamp": 5.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 261,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26948297023773193
+    },
+    {
+      "frame": 169,
+      "timestamp": 5.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 306,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2710283398628235
+    },
+    {
+      "frame": 170,
+      "timestamp": 5.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 280,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27199313044548035
+    },
+    {
+      "frame": 171,
+      "timestamp": 5.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 259,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2697383165359497
+    },
+    {
+      "frame": 172,
+      "timestamp": 5.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 265,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26910921931266785
+    },
+    {
+      "frame": 173,
+      "timestamp": 5.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 300,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2670101225376129
+    },
+    {
+      "frame": 174,
+      "timestamp": 5.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 266,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2677393853664398
+    },
+    {
+      "frame": 175,
+      "timestamp": 5.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 243,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26728206872940063
+    },
+    {
+      "frame": 176,
+      "timestamp": 5.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 248,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.26702097058296204
+    },
+    {
+      "frame": 177,
+      "timestamp": 5.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 290,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2660515010356903
+    },
+    {
+      "frame": 178,
+      "timestamp": 5.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 261,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2657109498977661
+    },
+    {
+      "frame": 179,
+      "timestamp": 5.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 253,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2649463415145874
+    },
+    {
+      "frame": 180,
+      "timestamp": 6.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 240,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.26522964239120483
+    },
+    {
+      "frame": 181,
+      "timestamp": 6.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 240,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26586633920669556
+    },
+    {
+      "frame": 182,
+      "timestamp": 6.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 223,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26094716787338257
+    },
+    {
+      "frame": 183,
+      "timestamp": 6.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 217,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26056045293807983
+    },
+    {
+      "frame": 184,
+      "timestamp": 6.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 206,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2610398828983307
+    },
+    {
+      "frame": 185,
+      "timestamp": 6.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 294,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26030433177948
+    },
+    {
+      "frame": 186,
+      "timestamp": 6.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 233,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26071086525917053
+    },
+    {
+      "frame": 187,
+      "timestamp": 6.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 218,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26051071286201477
+    },
+    {
+      "frame": 188,
+      "timestamp": 6.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 218,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26012200117111206
+    },
+    {
+      "frame": 189,
+      "timestamp": 6.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 283,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2589750289916992
+    },
+    {
+      "frame": 190,
+      "timestamp": 6.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 236,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.25979557633399963
+    },
+    {
+      "frame": 191,
+      "timestamp": 6.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 214,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2590128183364868
+    },
+    {
+      "frame": 192,
+      "timestamp": 6.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1210,
+      "n_map_matches": 210,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2582353353500366
+    },
+    {
+      "frame": 193,
+      "timestamp": 6.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 249,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2585809528827667
+    },
+    {
+      "frame": 194,
+      "timestamp": 6.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 194,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2576245963573456
+    },
+    {
+      "frame": 195,
+      "timestamp": 6.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 186,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.25834888219833374
+    },
+    {
+      "frame": 196,
+      "timestamp": 6.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 185,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2589176297187805
+    },
+    {
+      "frame": 197,
+      "timestamp": 6.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 248,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2578118145465851
+    },
+    {
+      "frame": 198,
+      "timestamp": 6.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 193,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2568274438381195
+    },
+    {
+      "frame": 199,
+      "timestamp": 6.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 181,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2576758563518524
+    },
+    {
+      "frame": 200,
+      "timestamp": 6.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 173,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.25752171874046326
+    },
+    {
+      "frame": 201,
+      "timestamp": 6.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 247,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2579701840877533
+    },
+    {
+      "frame": 202,
+      "timestamp": 6.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 208,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2572622299194336
+    },
+    {
+      "frame": 203,
+      "timestamp": 6.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 186,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2599499821662903
+    },
+    {
+      "frame": 204,
+      "timestamp": 6.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 188,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2595537006855011
+    },
+    {
+      "frame": 205,
+      "timestamp": 6.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 263,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2607060968875885
+    },
+    {
+      "frame": 206,
+      "timestamp": 6.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 196,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.25934332609176636
+    },
+    {
+      "frame": 207,
+      "timestamp": 6.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 204,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2594713270664215
+    },
+    {
+      "frame": 208,
+      "timestamp": 6.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 209,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2591259181499481
+    },
+    {
+      "frame": 209,
+      "timestamp": 6.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 182,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2598237991333008
+    },
+    {
+      "frame": 210,
+      "timestamp": 7.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 287,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2596745789051056
+    },
+    {
+      "frame": 211,
+      "timestamp": 7.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 236,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2608175575733185
+    },
+    {
+      "frame": 212,
+      "timestamp": 7.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 223,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2617526948451996
+    },
+    {
+      "frame": 213,
+      "timestamp": 7.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 233,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26122742891311646
+    },
+    {
+      "frame": 214,
+      "timestamp": 7.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 225,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2616947889328003
+    },
+    {
+      "frame": 215,
+      "timestamp": 7.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 240,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26268836855888367
+    },
+    {
+      "frame": 216,
+      "timestamp": 7.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 207,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2629135847091675
+    },
+    {
+      "frame": 217,
+      "timestamp": 7.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 216,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.263261616230011
+    },
+    {
+      "frame": 218,
+      "timestamp": 7.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 192,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2627904415130615
+    },
+    {
+      "frame": 219,
+      "timestamp": 7.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 192,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.26396042108535767
+    },
+    {
+      "frame": 220,
+      "timestamp": 7.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 274,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26495322585105896
+    },
+    {
+      "frame": 221,
+      "timestamp": 7.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 212,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.263240247964859
+    },
+    {
+      "frame": 222,
+      "timestamp": 7.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 190,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26447150111198425
+    },
+    {
+      "frame": 223,
+      "timestamp": 7.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 187,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2640961706638336
+    },
+    {
+      "frame": 224,
+      "timestamp": 7.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 168,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26447436213493347
+    },
+    {
+      "frame": 225,
+      "timestamp": 7.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 151,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2653593122959137
+    },
+    {
+      "frame": 226,
+      "timestamp": 7.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 232,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2657376825809479
+    },
+    {
+      "frame": 227,
+      "timestamp": 7.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 188,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26559069752693176
+    },
+    {
+      "frame": 228,
+      "timestamp": 7.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 157,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2661040723323822
+    },
+    {
+      "frame": 229,
+      "timestamp": 7.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 161,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2667207419872284
+    },
+    {
+      "frame": 230,
+      "timestamp": 7.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 166,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.266486257314682
+    },
+    {
+      "frame": 231,
+      "timestamp": 7.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 235,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2669452130794525
+    },
+    {
+      "frame": 232,
+      "timestamp": 7.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 177,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2680758833885193
+    },
+    {
+      "frame": 233,
+      "timestamp": 7.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 169,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2680838406085968
+    },
+    {
+      "frame": 234,
+      "timestamp": 7.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 184,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26832637190818787
+    },
+    {
+      "frame": 235,
+      "timestamp": 7.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 166,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2691973149776459
+    },
+    {
+      "frame": 236,
+      "timestamp": 7.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 185,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2687613070011139
+    },
+    {
+      "frame": 237,
+      "timestamp": 7.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 188,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26898089051246643
+    },
+    {
+      "frame": 238,
+      "timestamp": 7.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 182,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.26878491044044495
+    },
+    {
+      "frame": 239,
+      "timestamp": 7.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 180,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2698821723461151
+    },
+    {
+      "frame": 240,
+      "timestamp": 8.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 175,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.26935768127441406
+    },
+    {
+      "frame": 241,
+      "timestamp": 8.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 271,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2695232331752777
+    },
+    {
+      "frame": 242,
+      "timestamp": 8.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 220,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27075761556625366
+    },
+    {
+      "frame": 243,
+      "timestamp": 8.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 200,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.271316260099411
+    },
+    {
+      "frame": 244,
+      "timestamp": 8.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 194,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27194806933403015
+    },
+    {
+      "frame": 245,
+      "timestamp": 8.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 214,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2715310752391815
+    },
+    {
+      "frame": 246,
+      "timestamp": 8.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 252,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2714496850967407
+    },
+    {
+      "frame": 247,
+      "timestamp": 8.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 237,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2719706594944
+    },
+    {
+      "frame": 248,
+      "timestamp": 8.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 228,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2722668945789337
+    },
+    {
+      "frame": 249,
+      "timestamp": 8.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 222,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2716844081878662
+    },
+    {
+      "frame": 250,
+      "timestamp": 8.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 215,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.272524356842041
+    },
+    {
+      "frame": 251,
+      "timestamp": 8.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 317,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27248552441596985
+    },
+    {
+      "frame": 252,
+      "timestamp": 8.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 254,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27255988121032715
+    },
+    {
+      "frame": 253,
+      "timestamp": 8.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 231,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2730356752872467
+    },
+    {
+      "frame": 254,
+      "timestamp": 8.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 223,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2728002369403839
+    },
+    {
+      "frame": 255,
+      "timestamp": 8.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 212,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2717141807079315
+    },
+    {
+      "frame": 256,
+      "timestamp": 8.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 220,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2741630971431732
+    },
+    {
+      "frame": 257,
+      "timestamp": 8.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 340,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2728503346443176
+    },
+    {
+      "frame": 258,
+      "timestamp": 8.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 273,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27376678586006165
+    },
+    {
+      "frame": 259,
+      "timestamp": 8.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 249,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2744292914867401
+    },
+    {
+      "frame": 260,
+      "timestamp": 8.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 229,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27336257696151733
+    },
+    {
+      "frame": 261,
+      "timestamp": 8.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 237,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2738221287727356
+    },
+    {
+      "frame": 262,
+      "timestamp": 8.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 239,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2738040089607239
+    },
+    {
+      "frame": 263,
+      "timestamp": 8.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 356,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2745526432991028
+    },
+    {
+      "frame": 264,
+      "timestamp": 8.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 296,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2750174105167389
+    },
+    {
+      "frame": 265,
+      "timestamp": 8.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 253,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2751657962799072
+    },
+    {
+      "frame": 266,
+      "timestamp": 8.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 238,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2752024829387665
+    },
+    {
+      "frame": 267,
+      "timestamp": 8.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 251,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2758144736289978
+    },
+    {
+      "frame": 268,
+      "timestamp": 8.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 240,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.27551084756851196
+    },
+    {
+      "frame": 269,
+      "timestamp": 8.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 330,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27637937664985657
+    },
+    {
+      "frame": 270,
+      "timestamp": 9.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 281,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27644145488739014
+    },
+    {
+      "frame": 271,
+      "timestamp": 9.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 265,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2767593562602997
+    },
+    {
+      "frame": 272,
+      "timestamp": 9.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 239,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2778940200805664
+    },
+    {
+      "frame": 273,
+      "timestamp": 9.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 236,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2780050039291382
+    },
+    {
+      "frame": 274,
+      "timestamp": 9.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 242,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27866384387016296
+    },
+    {
+      "frame": 275,
+      "timestamp": 9.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 226,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2786264717578888
+    },
+    {
+      "frame": 276,
+      "timestamp": 9.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 349,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.27890336513519287
+    },
+    {
+      "frame": 277,
+      "timestamp": 9.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 279,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2793089747428894
+    },
+    {
+      "frame": 278,
+      "timestamp": 9.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 253,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28056907653808594
+    },
+    {
+      "frame": 279,
+      "timestamp": 9.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 254,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2813566327095032
+    },
+    {
+      "frame": 280,
+      "timestamp": 9.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 256,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.280845582485199
+    },
+    {
+      "frame": 281,
+      "timestamp": 9.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 256,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2808493971824646
+    },
+    {
+      "frame": 282,
+      "timestamp": 9.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 284,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28140029311180115
+    },
+    {
+      "frame": 283,
+      "timestamp": 9.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 292,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28139904141426086
+    },
+    {
+      "frame": 284,
+      "timestamp": 9.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 270,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28194981813430786
+    },
+    {
+      "frame": 285,
+      "timestamp": 9.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 248,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2821643054485321
+    },
+    {
+      "frame": 286,
+      "timestamp": 9.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 259,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28289803862571716
+    },
+    {
+      "frame": 287,
+      "timestamp": 9.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1209,
+      "n_map_matches": 260,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2824382483959198
+    },
+    {
+      "frame": 288,
+      "timestamp": 9.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 331,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28292208909988403
+    },
+    {
+      "frame": 289,
+      "timestamp": 9.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 302,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2829187214374542
+    },
+    {
+      "frame": 290,
+      "timestamp": 9.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 288,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2829170823097229
+    },
+    {
+      "frame": 291,
+      "timestamp": 9.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1208,
+      "n_map_matches": 252,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2824564278125763
+    },
+    {
+      "frame": 292,
+      "timestamp": 9.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 265,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28287169337272644
+    },
+    {
+      "frame": 293,
+      "timestamp": 9.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 274,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28261661529541016
+    },
+    {
+      "frame": 294,
+      "timestamp": 9.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 266,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2831088900566101
+    },
+    {
+      "frame": 295,
+      "timestamp": 9.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 259,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2831389605998993
+    },
+    {
+      "frame": 296,
+      "timestamp": 9.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 259,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2830412685871124
+    },
+    {
+      "frame": 297,
+      "timestamp": 9.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 263,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2822892367839813
+    },
+    {
+      "frame": 298,
+      "timestamp": 9.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 252,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2822640836238861
+    },
+    {
+      "frame": 299,
+      "timestamp": 9.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 286,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2826610803604126
+    },
+    {
+      "frame": 300,
+      "timestamp": 10.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 286,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2827437222003937
+    },
+    {
+      "frame": 301,
+      "timestamp": 10.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 271,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2828654646873474
+    },
+    {
+      "frame": 302,
+      "timestamp": 10.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 273,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28294166922569275
+    },
+    {
+      "frame": 303,
+      "timestamp": 10.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 274,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28291937708854675
+    },
+    {
+      "frame": 304,
+      "timestamp": 10.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 333,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2828851342201233
+    },
+    {
+      "frame": 305,
+      "timestamp": 10.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 301,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2834748327732086
+    },
+    {
+      "frame": 306,
+      "timestamp": 10.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 316,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2834567129611969
+    },
+    {
+      "frame": 307,
+      "timestamp": 10.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 313,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28346115350723267
+    },
+    {
+      "frame": 308,
+      "timestamp": 10.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 307,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.2840689718723297
+    },
+    {
+      "frame": 309,
+      "timestamp": 10.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 328,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28379735350608826
+    },
+    {
+      "frame": 310,
+      "timestamp": 10.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 333,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2855494022369385
+    },
+    {
+      "frame": 311,
+      "timestamp": 10.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 296,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.286355197429657
+    },
+    {
+      "frame": 312,
+      "timestamp": 10.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 289,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2861490547657013
+    },
+    {
+      "frame": 313,
+      "timestamp": 10.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 309,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28725385665893555
+    },
+    {
+      "frame": 314,
+      "timestamp": 10.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 294,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28755173087120056
+    },
+    {
+      "frame": 315,
+      "timestamp": 10.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 346,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2869715988636017
+    },
+    {
+      "frame": 316,
+      "timestamp": 10.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 333,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2870001494884491
+    },
+    {
+      "frame": 317,
+      "timestamp": 10.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 328,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2871403694152832
+    },
+    {
+      "frame": 318,
+      "timestamp": 10.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 314,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2875824570655823
+    },
+    {
+      "frame": 319,
+      "timestamp": 10.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 310,
+      "is_keyframe": true,
+      "height_above_floor_m": 0.28763195872306824
+    },
+    {
+      "frame": 320,
+      "timestamp": 10.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1200,
+      "n_map_matches": 338,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28719764947891235
+    },
+    {
+      "frame": 321,
+      "timestamp": 10.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 336,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2880082428455353
+    },
+    {
+      "frame": 322,
+      "timestamp": 10.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 323,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2880478501319885
+    },
+    {
+      "frame": 323,
+      "timestamp": 10.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 305,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2878824770450592
+    },
+    {
+      "frame": 324,
+      "timestamp": 10.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 302,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28821811079978943
+    },
+    {
+      "frame": 325,
+      "timestamp": 10.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 304,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2876127362251282
+    },
+    {
+      "frame": 326,
+      "timestamp": 10.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 318,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.2877247929573059
+    },
+    {
+      "frame": 327,
+      "timestamp": 10.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 308,
+      "is_keyframe": false,
+      "height_above_floor_m": 0.28768086433410645
+    },
+    {
+      "frame": 328,
+      "timestamp": 10.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 290,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 329,
+      "timestamp": 10.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 296,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 330,
+      "timestamp": 11.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 285,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 331,
+      "timestamp": 11.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 330,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 332,
+      "timestamp": 11.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 328,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 333,
+      "timestamp": 11.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 319,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 334,
+      "timestamp": 11.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 339,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 335,
+      "timestamp": 11.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 320,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 336,
+      "timestamp": 11.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 348,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 337,
+      "timestamp": 11.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1200,
+      "n_map_matches": 336,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 338,
+      "timestamp": 11.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 314,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 339,
+      "timestamp": 11.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 314,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 340,
+      "timestamp": 11.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 298,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 341,
+      "timestamp": 11.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 356,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 342,
+      "timestamp": 11.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 350,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 343,
+      "timestamp": 11.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 327,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 344,
+      "timestamp": 11.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 321,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 345,
+      "timestamp": 11.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 315,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 346,
+      "timestamp": 11.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 352,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 347,
+      "timestamp": 11.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 356,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 348,
+      "timestamp": 11.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 324,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 349,
+      "timestamp": 11.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 331,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 350,
+      "timestamp": 11.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 334,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 351,
+      "timestamp": 11.7,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 311,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 352,
+      "timestamp": 11.733333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 353,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 353,
+      "timestamp": 11.766666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 373,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 354,
+      "timestamp": 11.8,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 356,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 355,
+      "timestamp": 11.833333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 340,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 356,
+      "timestamp": 11.866666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 335,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 357,
+      "timestamp": 11.9,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 371,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 358,
+      "timestamp": 11.933333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1205,
+      "n_map_matches": 370,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 359,
+      "timestamp": 11.966666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 362,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 360,
+      "timestamp": 12.0,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 346,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 361,
+      "timestamp": 12.033333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 347,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 362,
+      "timestamp": 12.066666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 345,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 363,
+      "timestamp": 12.1,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 392,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 364,
+      "timestamp": 12.133333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 418,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 365,
+      "timestamp": 12.166666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 390,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 366,
+      "timestamp": 12.2,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 368,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 367,
+      "timestamp": 12.233333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 363,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 368,
+      "timestamp": 12.266666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 359,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 369,
+      "timestamp": 12.3,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 393,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 370,
+      "timestamp": 12.333333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1203,
+      "n_map_matches": 409,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 371,
+      "timestamp": 12.366666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 392,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 372,
+      "timestamp": 12.4,
+      "tracking_state": "OK",
+      "n_keypoints": 1207,
+      "n_map_matches": 374,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 373,
+      "timestamp": 12.433333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1206,
+      "n_map_matches": 381,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 374,
+      "timestamp": 12.466666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 357,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 375,
+      "timestamp": 12.5,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 383,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 376,
+      "timestamp": 12.533333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 385,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 377,
+      "timestamp": 12.566666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1201,
+      "n_map_matches": 360,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 378,
+      "timestamp": 12.6,
+      "tracking_state": "OK",
+      "n_keypoints": 1202,
+      "n_map_matches": 356,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 379,
+      "timestamp": 12.633333333,
+      "tracking_state": "OK",
+      "n_keypoints": 1204,
+      "n_map_matches": 344,
+      "is_keyframe": true,
+      "height_above_floor_m": null
+    },
+    {
+      "frame": 380,
+      "timestamp": 12.666666667,
+      "tracking_state": "OK",
+      "n_keypoints": 1200,
+      "n_map_matches": 374,
+      "is_keyframe": false,
+      "height_above_floor_m": null
+    }
+  ],
+  "note_no_dense_depth": "ORB-SLAM3 produces no per-pixel depth (pred_pts3d.npy) or confidence (pred_conf.npy). Downstream tools degrade gracefully when those files are absent \u2014 see analyze_run.py's load_run().",
+  "note_pose_convention": "pred_poses.npy assumes the TUM trajectory files store Twc (camera-to-world), per ORB-SLAM2/3's documented SaveTrajectoryTUM behavior. NOT independently verified against this project's cloned ORB_SLAM3 source as of this run \u2014 see convert_trajectory.py module docstring and check_motion_direction()."
+}
