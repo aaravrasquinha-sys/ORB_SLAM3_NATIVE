@@ -24,16 +24,32 @@ shared:
                                            # and builds Pangolin + ORB-SLAM3.
                                            # Read by: run_pipeline.py, make_orbslam_settings.py
 
-  videos_dir: null             # Path to the folder containing iPhone video files.
-                                # MUST be set by user (CLI --videos_dir or edit here).
+  videos_dir: null             # Path to a folder of pre-recorded video files. Only used
+                                # with --source file (run_pipeline.py / run_all.py).
+                                # Not needed for live RealSense capture.
                                 # Read by: run_all.py, run_pipeline.py
+
+# ===== REALSENSE D435I (live capture) =====
+realsense:
+  width: 1280                  # px. Color stream capture width.
+                                # Read by: capture_realsense_frames.py, get_realsense_calibration.py
+  height: 720                  # px. Color stream capture height.
+                                # Read by: capture_realsense_frames.py, get_realsense_calibration.py
+  fps: 30                      # Hz. Color stream capture fps. Should match orbslam.camera_fps
+                                # below — ORB-SLAM3's feature tracker needs small inter-frame
+                                # baselines, same reasoning as extraction.target_fps for video.
+                                # Read by: capture_realsense_frames.py, get_realsense_calibration.py
+  serial_number: "138422072842"   # str or null. Set if more than one RealSense is ever
+                                   # connected; null uses whichever device is found first.
+                                   # Read by: capture_realsense_frames.py, get_realsense_calibration.py
 
 # ===== CAMERA RIG =====
 camera:
-  height_m: 0.59               # meters, floor-to-lens (physical measurement from rig).
-                                # Metric output scales LINEARLY with this — measure carefully.
-                                
-                                # Read by: convert_trajectory.py, analyze_run_orb.py
+  height_m: 0.59                # meters, floor-to-lens (physical measurement from rig).
+                                 # CARRIED OVER FROM THE IPHONE RIG — RE-MEASURE for the
+                                 # D435I's actual mounted height before trusting metric
+                                 # output. Metric output scales LINEARLY with this value.
+                                 # Read by: convert_trajectory.py, analyze_run_orb.py
 
 # ===== CAMERA CALIBRATION =====
 calibration:
@@ -61,11 +77,17 @@ calibration:
                                 # successfully detected. Calibration is REJECTED below
                                 # this. Read by: calibrate_camera.py
 
-  output_json: "calibration/iphone14pro_4k_1x.json"   # Path (relative to project root)
-                                                         # where calibration result is
-                                                         # written. Read by:
-                                                         # calibrate_camera.py,
-                                                         # make_orbslam_settings.py
+  output_json: "calibration/realsense_d435i.json"   # Path (relative to project root)
+                                                       # where calibration result is
+                                                       # written — whether from
+                                                       # calibrate_camera.py (checkerboard)
+                                                       # or get_realsense_calibration.py /
+                                                       # capture_realsense_frames.py
+                                                       # --write_calib (factory intrinsics).
+                                                       # Read by: calibrate_camera.py,
+                                                       # get_realsense_calibration.py,
+                                                       # capture_realsense_frames.py,
+                                                       # make_orbslam_settings.py
 
 # ===== FRAME EXTRACTION =====
 # NOTE: ORB-SLAM3 needs 30 fps (not 10 fps like CUT3R). Feature tracking between

@@ -80,7 +80,7 @@ def load_config_and_resolve(args):
         args.jpeg_quality, "extraction.jpeg_quality", 95, cfg,
         validate=pcfg.in_range(0, 100))
 
-    default_calib = str(pcfg.REPO_ROOT / "calibration" / "iphone14pro_4k_1x.json")
+    default_calib = str(pcfg.REPO_ROOT / "calibration" / "realsense_d435i.json")
     resolved["calib_json"] = pcfg.resolve(
         args.calib_json, "calibration.output_json", default_calib, cfg)
 

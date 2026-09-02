@@ -51,15 +51,40 @@ def main():
     parser = argparse.ArgumentParser(
         description="Run the full ORB-SLAM3 pipeline (extract → settings → orbslam → convert → analyze)")
     parser.add_argument("--video", required=True,
-                        help="Video name (e.g., IMG_1112; script looks for IMG_1112.mov in --videos_dir)")
-    parser.add_argument("--videos_dir", required=True,
-                        help="Directory containing .mov files")
+                        help="Run name. With --source file: looked up as <video>.mov/.mp4 "
+                             "in --videos_dir. With --source realsense: just a label used "
+                             "for the scratch/output directory name.")
+    parser.add_argument("--source", default="file", choices=["file", "realsense"],
+                        help="'file' (default): pre-recorded video via extract_frames.py, "
+                             "as before. 'realsense': live-capture from a connected D435I "
+                             "via capture_realsense_frames.py instead.")
+    parser.add_argument("--videos_dir", default=None,
+                        help="Directory containing video files. Required with --source file.")
+    parser.add_argument("--duration_sec", type=float, default=None,
+                        help="With --source realsense: how long to capture. Required with "
+                             "--source realsense unless --max_frames is given.")
+    parser.add_argument("--max_frames", type=int, default=None,
+                        help="With --source realsense: stop after this many frames.")
     parser.add_argument("--output_dir", required=True,
                         help="Output directory for results (will be created)")
     parser.add_argument("--config", default="config.yaml",
                         help="Path to config.yaml (default: config.yaml)")
-    parser.add_argument("--calib_json", default="calibration/iphone14pro_4k_1x.json",
-                        help="Path to calibration JSON (default: calibration/iphone14pro_4k_1x.json)")
+    parser.add_argument("--calib_json", default="calibration/realsense_d435i.json",
+                        help="Path to calibration JSON (default: calibration/realsense_d435i.json)")
+    parser.add_argument("--write_calib", action="store_true",
+                        help="With --source realsense: pull factory intrinsics from the "
+                             "device during capture instead of requiring --calib_json to "
+                             "already exist.")
+    parser.add_argument("--save_infrared", action="store_true",
+                        help="With --source realsense: also write left/right infrared "
+                             "frames to disk (off by default — extra disk usage).")
+    parser.add_argument("--no_stereo", action="store_true",
+                        help="With --source realsense: don't enable the stereo/infrared "
+                             "module at all (by default it's enabled, matching the "
+                             "hardware's stereo+RGB+motion-on config).")
+    parser.add_argument("--no_motion", action="store_true",
+                        help="With --source realsense: don't enable the motion module "
+                             "(accel/gyro) at all.")
     parser.add_argument("--force", action="store_true",
                         help="Redo all stages from scratch")
     parser.add_argument("--force_from", default=None,
@@ -67,16 +92,31 @@ def main():
     args = parser.parse_args()
 
     video_name = args.video
-    videos_dir = Path(args.videos_dir).resolve()
     output_dir = Path(args.output_dir).resolve()
     config_path = Path(args.config).resolve()
     calib_json_path = Path(args.calib_json).resolve()
 
     # ── Resolve paths ───────────────────────────────────────────────────────
-    video_file = videos_dir / f"{video_name}.mov"
-    if not video_file.exists():
-        print(f"[ERROR] Video not found: {video_file}")
-        return 1
+    video_file = None
+    if args.source == "file":
+        if not args.videos_dir:
+            print("[ERROR] --videos_dir is required with --source file")
+            return 1
+        videos_dir = Path(args.videos_dir).resolve()
+        video_file = videos_dir / f"{video_name}.mov"
+        if not video_file.exists():
+            print(f"[ERROR] Video not found: {video_file}")
+            return 1
+    else:  # realsense
+        if args.duration_sec is None and args.max_frames is None and not args.force:
+            print("[ERROR] --source realsense needs --duration_sec and/or --max_frames "
+                  "so the capture stage has a stop condition.")
+            return 1
+        if not args.write_calib and not calib_json_path.exists():
+            print(f"[ERROR] {calib_json_path} not found. Either run "
+                  f"get_realsense_calibration.py first, or pass --write_calib to pull "
+                  f"factory intrinsics from the device during capture.")
+            return 1
 
     # Load config
     cfg = pcfg.load_config(str(config_path))
@@ -91,16 +131,18 @@ def main():
     print("=" * 70)
     print("  ORB-SLAM3 Pipeline")
     print("=" * 70)
-    print(f"Video:      {video_file}")
+    print(f"Source:     {args.source}" + (f" ({video_file})" if video_file else " (RealSense D435I live capture)"))
     print(f"Output dir: {output_dir}")
-    print(f"Frames dir: {frames_dir} (Linux scratch, not /mnt/c)")
+    print(f"Frames dir: {frames_dir}")
     print(f"Build dir:  {build_dir}")
 
     # ── Sanity checks ───────────────────────────────────────────────────────
     if not config_path.exists():
         print(f"\n[WARN] {config_path} not found — using hardcoded defaults")
-    if not calib_json_path.exists():
-        print(f"[ERROR] {calib_json_path} not found. Run calibrate_camera.py first or provide --calib_json")
+    if not calib_json_path.exists() and not (args.source == "realsense" and args.write_calib):
+        print(f"[ERROR] {calib_json_path} not found. Run calibrate_camera.py / "
+              f"get_realsense_calibration.py first, or provide --calib_json "
+              f"(or --write_calib with --source realsense).")
         return 1
     if not mono_video_bin.exists():
         print(f"[ERROR] {mono_video_bin} not found. Build ORB-SLAM3 first: bash setup/build_orbslam3.sh")
@@ -151,7 +193,7 @@ def main():
         ts_file = frames_dir / "timestamps.txt"
         if not must_run("extract", ts_file):
             print(f"\n[SKIP] extract — {ts_file} already exists. Use --force or --force_from extract to redo.")
-        else:
+        elif args.source == "file":
             print("\n" + "=" * 70)
             print("  STAGE: extract (video → frames + timestamps)")
             print("=" * 70)
@@ -161,6 +203,34 @@ def main():
                 "--output_dir", str(frames_dir),
                 "--config", str(config_path),
             ], description="Frame extraction", timeout_sec=3600)
+            if not ts_file.exists():
+                raise PipelineError(f"extract did not produce {ts_file}")
+        else:  # realsense
+            print("\n" + "=" * 70)
+            print("  STAGE: extract (RealSense D435I live capture → frames + timestamps)")
+            print("=" * 70)
+            capture_cmd = [
+                "python3", "capture_realsense_frames.py",
+                "--output_dir", str(frames_dir),
+                "--config", str(config_path),
+                "--calib_json", str(calib_json_path),
+            ]
+            if args.duration_sec is not None:
+                capture_cmd += ["--duration_sec", str(args.duration_sec)]
+            if args.max_frames is not None:
+                capture_cmd += ["--max_frames", str(args.max_frames)]
+            if args.write_calib:
+                capture_cmd += ["--write_calib"]
+            if args.save_infrared:
+                capture_cmd += ["--save_infrared"]
+            if args.no_stereo:
+                capture_cmd += ["--no_stereo"]
+            if args.no_motion:
+                capture_cmd += ["--no_motion"]
+            if args.force:
+                capture_cmd += ["--force"]
+            run_cmd(capture_cmd, description="RealSense capture",
+                     timeout_sec=(args.duration_sec or 0) + 120 if args.duration_sec else 3600)
             if not ts_file.exists():
                 raise PipelineError(f"extract did not produce {ts_file}")
 

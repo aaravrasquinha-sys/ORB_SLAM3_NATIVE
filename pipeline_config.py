@@ -52,6 +52,9 @@ PROJECT_KEYS = {
     # shared
     "shared.random_seed", "shared.scratch_dir", "shared.orbslam_build_dir",
     "shared.videos_dir",
+    # realsense (live capture)
+    "realsense.width", "realsense.height", "realsense.fps",
+    "realsense.serial_number",
     # camera
     "camera.height_m",
     # calibration

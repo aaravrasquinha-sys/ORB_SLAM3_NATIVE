@@ -74,7 +74,7 @@ def load_config_and_resolve(args):
     resolved["min_frames"] = pcfg.resolve(
         args.min_frames, "calibration.min_frames", 15, cfg, validate=pcfg.positive)
 
-    default_output = str(pcfg.REPO_ROOT / "calibration" / "iphone14pro_4k_1x.json")
+    default_output = str(pcfg.REPO_ROOT / "calibration" / "realsense_d435i.json")
     resolved["output_json"] = pcfg.resolve(
         args.output_json, "calibration.output_json", default_output, cfg)
 
